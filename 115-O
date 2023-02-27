@@ -1,0 +1,6 @@
+The average time complexity of inserting a value in a Binary Search Tree is O(log n) in the best case, and O(n) in the worst case if the tree becomes unbalanced.
+
+The average time complexity of removing a node from a Binary Search Tree is O(log n) in the best case, and O(n) in the worst case if the tree becomes unbalanced.
+
+The average time complexity of searching for a node in a Binary Search Tree of size n is O(log n) in the best case, and O(n) in the worst case if the tree becomes unbalanced.
+
