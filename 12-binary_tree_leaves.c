@@ -1,13 +1,20 @@
-//This function recursively counts the number of leaves in a binary tree by traversing the tree using pre-order traversal. It checks if a node is a leaf by verifying if its left and right child pointers are NULL. If so, it returns 1, otherwise it returns the sum of the number of leaves in its left and right subtrees. If the input tree is NULL, the function returns 0.
+#include "binary_trees.h"
 
+/**
+ * binary_tree_leaves - Counts the leaves in a binary tree.
+ * @tree: A pointer to the root node of the tree to count the leaves of.
+ *
+ * Return: The number of leaves in the tree.
+ */
 size_t binary_tree_leaves(const binary_tree_t *tree)
 {
-    if (tree == NULL)
-        return 0;
+	size_t leaves = 0;
 
-    if (tree->left == NULL && tree->right == NULL)
-        return 1;
-
-    return binary_tree_leaves(tree->left) + binary_tree_leaves(tree->right);
+	if (tree)
+	{
+		leaves += (!tree->left && !tree->right) ? 1 : 0;
+		leaves += binary_tree_leaves(tree->left);
+		leaves += binary_tree_leaves(tree->right);
+	}
+	return (leaves);
 }
-

@@ -1,11 +1,15 @@
-//This function first checks if the tree pointer is NULL. If it is, the function does nothing and returns. Otherwise, the function recursively deletes the left and right subtrees, and finally frees the root node.
+#include "binary_trees.h"
 
-void binary_tree_delete(binary_tree_t *tree) {
-    if (tree == NULL) {
-        return;
-    }
-    binary_tree_delete(tree->left);
-    binary_tree_delete(tree->right);
-    free(tree);
+/**
+ * binary_tree_delete - Deletes a binary tree.
+ * @tree: A pointer to the root node of the tree to delete.
+ */
+void binary_tree_delete(binary_tree_t *tree)
+{
+	if (tree != NULL)
+	{
+		binary_tree_delete(tree->left);
+		binary_tree_delete(tree->right);
+		free(tree);
+	}
 }
-
